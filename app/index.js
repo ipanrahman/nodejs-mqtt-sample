@@ -8,7 +8,12 @@ const morgan = require("morgan");
 
 const path = require("path");
 
+const mongo = require("../config/database.config");
+
 const webRouter = require("../routes/web.router");
+const apiRouter = require("../routes/api.router");
+
+mongo.connect();
 
 app.use(
   bodyParser.urlencoded({
@@ -28,6 +33,7 @@ app.use(
 //routers
 
 app.use("/", webRouter);
+app.use("/api", apiRouter);
 
 app.use(bodyParser.json());
 
