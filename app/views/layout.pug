@@ -3,7 +3,8 @@ html
   head
     link(rel='icon',href='/img/favicon.png',sizes='180x180')
     title= title
-    link(rel="stylesheet", href="/css/bootstrap.min.css")
-    link(rel='stylesheet', href='/css/style.css')
+    link(rel="stylesheet", href="/css/bootstrap.min.css",type="stylesheet")
+    link(rel="stylesheet", href="/css/style.css",type="stylesheet")
   body
     block content
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js")
