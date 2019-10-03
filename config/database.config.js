@@ -6,7 +6,8 @@ const connect = async () => {
   mongoose.Promise = global.Promise;
   mongoose
     .connect(MONGODB_URL, {
-      useNewUrlParser: true
+      useNewUrlParser: true,
+      useUnifiedTopology: true
     })
     .then(() => {
       logger.info("Successfully connected to the database");

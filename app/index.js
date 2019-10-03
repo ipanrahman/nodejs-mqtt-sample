@@ -21,6 +21,8 @@ app.use(
   })
 );
 
+app.use(bodyParser.json());
+
 app.use(
   morgan(process.env.NODE_ENV !== "production" ? "dev" : "combined", {
     skip: function(req, res) {
@@ -31,11 +33,8 @@ app.use(
 );
 
 //routers
-
 app.use("/", webRouter);
 app.use("/api", apiRouter);
-
-app.use(bodyParser.json());
 
 app.set("views", path.join(__dirname, "./views"));
 app.set("view engine", "pug");
