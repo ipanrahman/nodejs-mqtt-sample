@@ -7,4 +7,9 @@ router.get("/", (req, res) => {
   });
 });
 
+// Todo router
+router.get("/todos", (req, res) => {
+  res.render("todos/index");
+});
+
 module.exports = router;
