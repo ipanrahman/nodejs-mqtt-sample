@@ -1,11 +1,10 @@
-const MONGODB_URL = "mongodb://localhost:27017/todo_app";
 const mongoose = require("mongoose");
 const logger = require("./logger.cofig");
 
 const connect = async () => {
   mongoose.Promise = global.Promise;
   mongoose
-    .connect(MONGODB_URL, {
+    .connect(process.env.DATABASE_URL, {
       useNewUrlParser: true,
       useUnifiedTopology: true
     })

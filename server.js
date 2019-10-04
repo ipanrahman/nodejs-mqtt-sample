@@ -1,8 +1,8 @@
-const PORT = 3000;
+require("dotenv").config();
 
 const app = require("./app");
 const logger = require("@config/logger.cofig");
 
-app.listen(PORT, () => {
-  logger.info(`Server is listening on port ${PORT}`);
+app.listen(process.env.APP_PORT, () => {
+  logger.info(`Server is listening on port ${process.env.APP_PORT}`);
 });
