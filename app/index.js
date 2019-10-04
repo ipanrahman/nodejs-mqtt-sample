@@ -2,16 +2,18 @@ const express = require("express");
 
 const app = express();
 
+require("module-alias/register");
+
 const bodyParser = require("body-parser");
 
 const morgan = require("morgan");
 
 const path = require("path");
 
-const mongo = require("../config/database.config");
+const mongo = require("@config/database.config");
 
-const webRouter = require("../routes/web.router");
-const apiRouter = require("../routes/api.router");
+const webRouter = require("@routes/web.router");
+const apiRouter = require("@routes/api.router");
 
 mongo.connect();
 

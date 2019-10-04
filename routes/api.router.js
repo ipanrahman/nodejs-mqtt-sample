@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const todoController = require("../app/controllers/todo.controller");
+const todoController = require("@controllers/todo.controller");
 router.post("/todos", todoController.create);
 router.get("/todos", todoController.findAll);
 router.get("/todos/:id", todoController.findById);
